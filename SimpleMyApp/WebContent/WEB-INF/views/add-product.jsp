@@ -45,7 +45,7 @@
 	
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="Description">sivastar maihtaI</label>
+					<label class="col-md-3 control-lable" for="Description">saivastr maaihtI</label>
 					<div class="col-md-7">
 						<form:input type="text" path="description" id="description" class="form-control input-sm" />
 						
@@ -58,7 +58,7 @@
 			
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="manufacturerName">]tpadk </label>
+					<label class="col-md-3 control-lable" for="manufacturerName">]tpadk kMpnaIcao naava </label>
 					<div class="col-md-7">
 						<form:input type="text" path="manufacturerName" id="manufacturerName" class="form-control input-sm" />
 						
@@ -135,7 +135,7 @@
 <div></div>
 			<div class="column">
 				<div class="form-actions" style="text-align: center;">
-							<input type="submit" value="iTk Aaho" class="btn btn-primary btn-sm"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<c:url value='/' />"><button class="btn btn-primary btn-small" type="button">rdd kara</button></a>
+							<input type="submit" value="izk Aaho" class="btn btn-primary btn-sm"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="<c:url value='/' />"><button class="btn btn-primary btn-small" type="button">rdd kra</button></a>
 				</div>
 			</div>
 		</form:form>

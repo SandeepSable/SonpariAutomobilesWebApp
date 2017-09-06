@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Login page</title>
+		<title>Login Page</title>
 		<link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
 		<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
@@ -26,7 +26,7 @@
 							</c:if>
 							<c:if test="${param.logout != null}">
 								<div class="alert alert-success">
-									<p>taumhI bahor aalat.</p>
+									<p>tumhI baahor Aalaat.</p>
 								</div>
 							</c:if>
 							<div class="input-group input-sm">

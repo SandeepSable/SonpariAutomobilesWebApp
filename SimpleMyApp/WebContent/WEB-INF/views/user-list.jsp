@@ -18,7 +18,7 @@
 	<div class="">
 		<div class="panel panel-default">
 			  <!-- Default panel contents -->
-		  	<div class="panel-heading"><span class="lead">sav- yujarcI maihtaI </span></div>
+		  	<div class="panel-heading"><span class="lead">sava- yaujarcaI maaihtI </span></div>
 			<table class="table table-hover">
 	    		<thead>
 		      		<tr>
@@ -41,7 +41,7 @@
 					    <td>${user.ssoId}</td>
 						<td>${user.firstName}</td>
 						<td>${user.lastName}</td>
-						<td>${user.email}</td>
+						<td style="font-family: Monospace;" >${user.email}</td>
 					    <sec:authorize access="hasAnyRole('ADMIN', 'DBA')">
 							<td><a href="<c:url value='/edit-user-${user.ssoId}' />" class="btn btn-success custom-width">badla kra</a></td>
 				        </sec:authorize>
@@ -55,7 +55,7 @@
 		</div>
 		<sec:authorize access="hasRole('ADMIN')">
 		 	<div class="well">
-		 		<a href="<c:url value='/new-user' />">Add New User</a>
+		 		<a href="<c:url value='/new-user' />">naivana tyaar kra</a>
 		 	</div>
 	 	</sec:authorize>
    	</div>

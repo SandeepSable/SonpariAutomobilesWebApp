@@ -73,9 +73,12 @@ font-size: 200px;
 				</ul></li>
 			<li class="yahoo"><a href="#">saaza</a>
 				<ul>
+				
+					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
 					<li><a href="./upcoming">naivana</a></li>
 					<li><a href="./upcoming"></a></li>
 					<li><a href="./upcoming">sava- pha</a></li>
+					</sec:authorize>
 				</ul></li>
 			<li class="google"><a href="#">baokAp</a>
 				<ul>
@@ -86,10 +89,13 @@ font-size: 200px;
 				</ul></li>
 			<li class="twitter"><a href="#">madt</a>
 				<ul>
+				
+					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
 					<li><a href="./upcoming"></a></li>
 					<li><a href="./upcoming"></a></li>
 					<li><a href="./upcoming"></a></li>
 					<li><a href="./upcoming"></a></li>
+					</sec:authorize>
 				</ul></li>
 
 			<li style="right: 10%; float: right;" class="twitter"><a href="#"><img alt="User Options" src="./static/img/user-red.png" width="40px" height="40px"></a>
@@ -99,8 +105,8 @@ font-size: 200px;
 					</sec:authorize>
 
 					<sec:authorize access="!hasAnyRole('ADMIN', 'DBA','USER')">
-						<li><a href="./new-user">SignUp</a></li>
-						<li><a href="./login">Login</a></li>
+						<li><a href="./new-user">naivana rijasTr kra</a></li>
+						<li><a href="./login">laaogaIna kra</a></li>
 					</sec:authorize>
 
 				</ul></li>
