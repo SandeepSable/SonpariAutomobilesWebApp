@@ -36,7 +36,7 @@ public class ProductController {
 			return "/add-product";
 		}
 		Product retProduct = productService.addProduct(product);
-		model.addAttribute("success", "Proudct \"" + product.getProductName() + "\" added successfully.");
+		model.addAttribute("success", "vastu \' " + product.getProductName() + " \'  samaaivasT krNyaat AalaI Aaho.");
 		model.addAttribute("product", retProduct);
 		return "success-page";
 	}
@@ -78,7 +78,7 @@ public class ProductController {
 	public String deleteProductByProductId(ModelMap model, @PathVariable int productId) {
 		// model.addAttribute("loggedinuser", getPrincipal());
 		Boolean isDeleted = productService.deleteProductByProductId(productId);
-		System.out.println("deleted successfully");
+		System.out.println("kaaZuna takNyat Aali aaho.");
 		
 		return "redirect:/view-product";
 	}

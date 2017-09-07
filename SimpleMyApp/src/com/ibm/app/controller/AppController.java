@@ -124,7 +124,7 @@ public class AppController {
 		model.addAttribute("user", user);
 		model.addAttribute("edit", false);
 		model.addAttribute("loggedinuser", getPrincipal());
-		return "/registration";
+		return "/add-user";
 	}
 
 	@RequestMapping(value = { "/upcoming" }, method = RequestMethod.GET)
@@ -137,7 +137,7 @@ public class AppController {
 
 		System.out.println("AppController.saveUser()............");
 		if (result.hasErrors()) {
-			return "/registration";
+			return "/add-user";
 		}
 
 		/*
@@ -154,12 +154,12 @@ public class AppController {
 			FieldError ssoError = new FieldError("user", "ssoId", messageSource.getMessage("non.unique.ssoId",
 					new String[] { user.getSsoId() }, Locale.getDefault()));
 			result.addError(ssoError);
-			return "/registration";
+			return "/add-user";
 		}
 
 		userService.saveUser(user);
 
-		model.addAttribute("success","User " + user.getFirstName() + " " + user.getLastName() + " registered successfully");
+		model.addAttribute("success","yaujar \'" + user.getFirstName() + "\'"+ user.getLastName() + " tayar karNyaat Aalaa Aaho.");
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "/success-page";
 	}
@@ -170,14 +170,14 @@ public class AppController {
 		model.addAttribute("user", user);
 		model.addAttribute("edit", true);
 		model.addAttribute("loggedinuser", getPrincipal());
-		return "/registration";
+		return "/add-user";
 	}
 
 	@RequestMapping(value = { "/edit-user-{ssoId}" }, method = RequestMethod.POST)
 	public String updateUser(@Valid User user, BindingResult result, ModelMap model, @PathVariable String ssoId) {
 
 		if (result.hasErrors()) {
-			return "registration";
+			return "add-user";
 		}
 
 		/*
@@ -191,7 +191,7 @@ public class AppController {
 
 		userService.updateUser(user);
 
-		model.addAttribute("success","User " + user.getFirstName() + " " + user.getLastName() + " updated successfully");
+		model.addAttribute("success","yaujar " + user.getFirstName() + " " + user.getLastName() + " maQyao badla krNyaat Aalaa Aaho.");
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "/registrationSuccess";
 	}
@@ -199,7 +199,7 @@ public class AppController {
 	@RequestMapping(value = { "/delete-user-{ssoId}" }, method = RequestMethod.GET)
 	public String deleteUser(@PathVariable String ssoId) {
 		userService.deleteUserBySSO(ssoId);
-		return "redirect:/user-list";
+		return "redirect:/userList";
 	}
 
 	@ModelAttribute("roles")

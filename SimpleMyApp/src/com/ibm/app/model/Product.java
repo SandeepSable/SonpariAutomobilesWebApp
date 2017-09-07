@@ -19,7 +19,7 @@ public class Product implements Serializable{
 	@Column(name="PRODUCT_ID")
 	private Integer productId;
 
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="PRODUCT_NAME", unique=true, nullable=false)
 	private String productName;
 	
@@ -39,17 +39,17 @@ public class Product implements Serializable{
 	@Column(name="WARRENTY", nullable=true)
 	private String warrenty;
 		
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="PRICE", nullable=false)
 	private String price;
 	
 	
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="GST_TAX", nullable=false)
 	private String gstTax;
 	
 	
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="STORAGE_LOCATION", nullable=false)
 	private String storageLocation;
 	

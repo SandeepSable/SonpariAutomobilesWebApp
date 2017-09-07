@@ -10,6 +10,14 @@
 	<title>Users List</title>
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 	<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+
+<style>
+td,th
+{   text-align: center;
+    word-wrap: break-word;
+}
+</style>
+
 </head>
 
 <body>
@@ -18,8 +26,15 @@
 	<div class="">
 		<div class="panel panel-default">
 			  <!-- Default panel contents -->
-		  	<div class="panel-heading"><span class="lead">sava- yaujarcaI maaihtI </span></div>
-			<table class="table table-hover">
+			  
+			<div class="">
+                <span class="" style="margin-left: 1%;"> 
+				<sec:authorize access="hasRole('ADMIN')">
+		 		<a href="<c:url value='/new-user' />">naivana tyaar kra</a>
+        	 	</sec:authorize></span>
+				<span style="margin-left: 40%;" class="">sava- yaujarcaI maaihtI </span>
+			</div>
+			<table class="" border="1" style="table-layout: fixed; width: 100%; overflow: visible;">
 	    		<thead>
 		      		<tr>
                         <th>yaujar AayaDI</th>

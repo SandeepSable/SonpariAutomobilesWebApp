@@ -8,7 +8,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>User Registration Form</title>
+<title>Product Registration Form</title>
 <link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 
@@ -95,7 +95,7 @@
 			
 		<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="price">Saasanaacaa kr</label>
+					<label class="col-md-3 control-lable" for="gstTax">Saasanaacaa kr</label>
 					<div class="col-md-7">
 						<form:input type="number" path="gstTax" id="gstTax" class="form-control input-sm" />
 						
@@ -106,12 +106,11 @@
 				</div>
 			</div>
 			
-			
 		<div class="column">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="storageLocation">zovalaolao izkaNa</label>
 					<div class="col-md-7">
-						<form:input type="text" path="storageLocation" id="storageLocation" class="form-control input-sm" />
+						<form:input style="font-size:25px;" type="text" path="storageLocation" id="storageLocation" class="form-control input-sm" />
 						
 					</div>
 					<div class="has-error">

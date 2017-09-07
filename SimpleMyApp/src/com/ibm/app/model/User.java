@@ -24,27 +24,27 @@ public class User implements Serializable{
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="SSO_ID", unique=true, nullable=false)
 	private String ssoId;
-	
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
+
 	@Column(name="PASSWORD", nullable=false)
 	private String password;
 		
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="FIRST_NAME", nullable=false)
 	private String firstName;
 
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="LAST_NAME", nullable=false)
 	private String lastName;
 
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="EMAIL", nullable=false)
 	private String email;
 
-	@NotEmpty
+	@NotEmpty(message="AavaSyak Aaho.")
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "APP_USER_USER_PROFILE", 
              joinColumns = { @JoinColumn(name = "USER_ID") }, 

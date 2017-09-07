@@ -14,8 +14,8 @@
 <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 
 <style>
-td
-{
+td,th
+{   text-align: center;
     word-wrap: break-word;
 }
 </style>
@@ -27,28 +27,34 @@ td
 	<div class="">
 		<div class="">
 			<!-- Default panel contents -->
+
 			<div class="">
-				<span class="">List of Products </span>
+                <span class="" style="margin-left: 1%;"> 
+				<sec:authorize access="hasRole('ADMIN')">
+				<a href="<c:url value='/add-product' />">naivana tyaar kra</a>
+		        </sec:authorize>
+				</span>
+				<span style="margin-left: 40%;" class="">sava- yaujarcaI maaihtI </span>
 			</div>
-			
+
 			<table  border="1" style="table-layout: fixed; width: 100%; overflow: visible;">
 				<thead>
 					<tr>
-						<th>Product Id</th>
-						<th>Product Name</th>
-						<th>Alias Name</th>
-						<th>Description</th>
-						<th>Manufacturer</th>
-						<th>Price</th>
-						<th>Warrenty</th>
-						<th>GST Tax</th>
-						<th>Stored Location</th>
-						<th>Is Disabled</th>
+						<th>Anau k`maaMk</th>
+						<th>vastucao naava</th>
+						<th>pyaa-yaI naava</th>
+						<th>saivastar maihtI</th>
+						<th>]tpadk kMpnaIcao naava</th>
+						<th>ikMmat</th>
+						<th>hmaI</th>
+						<th>Saasanaacaa kr</th>
+						<th>zovalaolao izkaNa</th>
+						<th>Akaya-rt kra</th>
 						<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-							<th width="100">Edit</th>
+							<th width="100">badla kra</th>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ADMIN')">
-							<th width="100">Delete</th>
+							<th width="100">kaZuna Taka</th>
 						</sec:authorize>
 
 					</tr>
@@ -68,11 +74,11 @@ td
 							<td>${product.isDisabled}</td>
 							<sec:authorize access="hasAnyRole('ADMIN', 'DBA')">
 								<td><a href="<c:url value='/edit-product-${product.productId}' />"
-									class="btn btn-success custom-width">edit</a></td>
+									class="btn btn-success custom-width">badla kra</a></td>
 							</sec:authorize>
 							<sec:authorize access="hasAnyRole('ADMIN','DBA')">
 								<td><a href="<c:url value='/delete-product-${product.productId}' />"
-									class="btn btn-danger custom-width">delete</a></td>
+									class="btn btn-danger custom-width">kaZuna Taka</a></td>
 							</sec:authorize>
 						</tr>
 					</c:forEach>
@@ -81,7 +87,7 @@ td
 		</div>
 		<sec:authorize access="hasRole('ADMIN')">
 			<div class="well">
-				<a href="<c:url value='/add-product' />">Add New Product</a>
+				<a href="<c:url value='/add-product' />">naivana tyaar kra</a>
 			</div>
 		</sec:authorize>
 	</div>

@@ -22,8 +22,7 @@
 
 					<div class="column">
 						<div class="form-group col-md-12">
-							<label class="col-md-3 control-lable" for="productId">Product
-								ID</label>
+							<label class="col-md-3 control-lable" for="productId">Anau k`maaMk</label>
 							<div class="col-md-7">
 								<form:input type="text" name="productId" path="productId" id="productId"
 									class="form-control input-sm" disabled="true" />
@@ -35,8 +34,7 @@
 					</div>
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="productName">Product
-						Name</label>
+					<label class="col-md-3 control-lable" for="productName">vastucao naava</label>
 					<div class="col-md-7">
 						<form:input type="text" path="productName" id="productName"
 							class="form-control input-sm" />
@@ -49,8 +47,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="asliasName">Alias
-						name</label>
+					<label class="col-md-3 control-lable" for="asliasName">pyaa-yaI naava</label>
 					<div class="col-md-7">
 						<form:input type="text" path="aliasName" id="aliasName"
 							class="form-control input-sm" />
@@ -63,7 +60,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="Description">Description</label>
+					<label class="col-md-3 control-lable" for="Description">saivastar maihtI</label>
 					<div class="col-md-7">
 						<form:input type="text" path="description" id="description"
 							class="form-control input-sm" />
@@ -77,8 +74,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="manufacturerName">Manufacturer
-					</label>
+					<label class="col-md-3 control-lable" for="manufacturerName">]tpadk kMpnaIcao naava </label>
 					<div class="col-md-7">
 						<form:input type="text" path="manufacturerName"
 							id="manufacturerName" class="form-control input-sm" />
@@ -91,7 +87,7 @@
 			</div>
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="warrenty">Warrenty</label>
+					<label class="col-md-3 control-lable" for="warrenty">hmaI</label>
 					<div class="col-md-7">
 						<form:input type="text" path="warrenty" id="warrenty"
 							class="form-control input-sm" />
@@ -103,7 +99,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="price">Price</label>
+					<label class="col-md-3 control-lable" for="price">ikMmat</label>
 					<div class="col-md-7">
 						<form:input type="number" path="price" id="price"
 							class="form-control input-sm" />
@@ -117,7 +113,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="price">Tax-(GST)</label>
+					<label class="col-md-3 control-lable" for="price">Saasanaacaa kr</label>
 					<div class="col-md-7">
 						<form:input type="number" path="gstTax" id="gstTax"
 							class="form-control input-sm" />
@@ -132,7 +128,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="storageLocation">Rack</label>
+					<label class="col-md-3 control-lable" for="storageLocation">zovalaolao izkaNa</label>
 					<div class="col-md-7">
 						<form:input type="text" path="storageLocation"
 							id="storageLocation" class="form-control input-sm" />
@@ -147,8 +143,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="isDisabled">Is
-						Disabled ?</label>
+					<label class="col-md-3 control-lable" for="isDisabled">Akaya-rt kra</label>
 					<div class="col-md-7">
 						<form:input type="Checkbox" path="isDisabled" id="isDisabled"
 							class="form-control input-sm" />
@@ -163,13 +158,13 @@
 				<div class="form-actions">
 					<c:choose>
 						<c:when test="${edit}">
-							<input type="submit" value="Update"	class="btn btn-primary btn-sm" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="<c:url value='/view-product' />">Cancel</a>
+							<input type="submit" value="badla kra"	class="btn btn-primary btn-sm" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="<c:url value='/view-product' />">rdd kra</a>
 						</c:when>
 						<c:otherwise>
-							<input type="submit" value="Register"
-								class="btn btn-primary btn-sm" /> or <a
-								href="<c:url value='/' />">Cancel</a>
+							<input type="submit" value="baDal kra"
+								class="btn btn-primary btn-sm" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a
+								href="<c:url value='/' />">rdd kra</a>
 						</c:otherwise>
 					</c:choose>
 				</div>

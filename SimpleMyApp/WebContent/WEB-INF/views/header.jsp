@@ -32,7 +32,7 @@ font-size: 200px;
 	<div class="row">
 		<ul id="nav">
 
-			<li style="font-size: 20px;" class="site-name"><a href="./home" style="font-size: 20px;">saaonaprI</a></li>
+			<li class="site-name"><a href="./home" style="font-size: 30px;">saaonaprI</a></li>
 
 
 

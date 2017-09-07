@@ -16,7 +16,7 @@
 		<div class="alert alert-success lead">${success}</div>
 
 		<span class="well floatRight">
-		 <a	href="<c:url value='./' />">OK</a>
+		 <a	href="<c:url value='./' />">izk</a>
 		</span>
 
 	</div>

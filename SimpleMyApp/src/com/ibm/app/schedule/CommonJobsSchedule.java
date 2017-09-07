@@ -16,7 +16,7 @@ public class CommonJobsSchedule {
 		System.out.println("Validate user schedule...");
 	}
 	
-	@Scheduled(cron="* * * * * 4")
+	//@Scheduled(cron="* * * * * 4")
 	public void databaseBackup() 
 	{
 		System.out.println("Data backup scheduler...");

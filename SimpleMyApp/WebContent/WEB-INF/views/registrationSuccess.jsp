@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registration Confirmation Page</title>
+<title>Success Page</title>
 <link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
@@ -13,15 +13,9 @@
 	<%@include file="header.jsp" %>
 	<div class="generic-container">
 		<div class="alert alert-success lead">${success}</div>
-
-		 
 		<sec:authorize access="hasAnyRole('ADMIN','DBA')">
-		<span class="well floatRight">
-			Go to <a href="<c:url value='/user-list' />"> Users List</a>
-			</span> 
-			</sec:authorize>
-
-		<span class="well floatRight"><a href="./register_success">HOME</a> </span>
+		<span class="well floatRight"><a href="<c:url value='/home' />">vaapsa</a></span> 
+		</sec:authorize>
 	</div>
 </body>
 
