@@ -40,7 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		        .antMatchers("/public*").permitAll()
 		        .antMatchers("/home").access("hasAnyRole('ADMIN', 'DBA','USER')")
 				.antMatchers("/secure").access("hasAnyRole('ADMIN', 'DBA','USER')")
-				.antMatchers("/new-user").access("hasAnyRole('ADMIN')")
+				.antMatchers("/add-user").access("hasAnyRole('ADMIN')")
 				.antMatchers("/login").access("!hasAnyRole('ADMIN', 'DBA','USER')")
 				.antMatchers("/edit-user-*").access("hasAnyRole('ADMIN', 'DBA')")
 				.antMatchers("/delete-user-*").access("hasRole('ADMIN')")

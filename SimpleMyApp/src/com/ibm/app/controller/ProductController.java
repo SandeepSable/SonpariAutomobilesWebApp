@@ -1,8 +1,6 @@
 package com.ibm.app.controller;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.ibm.app.model.Product;
 import com.ibm.app.service.ProductService;
@@ -35,13 +32,19 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/add-product", method = RequestMethod.POST)
-	public String handleAddProductForm(@Valid Product product,BindingResult result, ModelMap model) {
+	public String handleAddProductForm(@Valid Product product, BindingResult result, ModelMap model) {
 		System.out.println("ProductController.handleAddProductForm()-------------->");
 		System.out.println("--product--->" + product);
 		System.out.println("ProductController.handleAddProductForm()");
 		if (result.hasErrors()) {
 			return "/add-product";
 		}
+		String userName = AppController.getLoggedInUserName();
+		product.setInsertedBy(userName);
+
+		Long timeInMillies = Calendar.getInstance().getTimeInMillis();
+		product.setInsertedTime(timeInMillies.toString());
+
 		Product retProduct = productService.addProduct(product);
 		model.addAttribute("success", "vastu \' " + product.getProductName() + " \'  samaaivasT krNyaat AalaI Aaho.");
 		model.addAttribute("product", retProduct);
@@ -71,6 +74,15 @@ public class ProductController {
 		// model.addAttribute("success", "Proudct for " + product.getProductName() + "
 		// updated successfully.");
 		return "redirect:/view-product";
+	}
+
+	@RequestMapping(value = "/sale", method = RequestMethod.GET)
+	public String billingForm(ModelMap model) {
+
+		List<Product> products = productService.getProductList();
+		model.addAttribute("products", products);
+
+		return "billing";
 	}
 
 	// view all prouducts

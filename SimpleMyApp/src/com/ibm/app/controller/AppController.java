@@ -48,6 +48,12 @@ public class AppController {
 	@Autowired
 	AuthenticationTrustResolver authenticationTrustResolver;
 
+	@RequestMapping(value = "/getUserName", method = RequestMethod.GET)
+	public static String getLoggedInUserName()
+	{
+		return getPrincipal();
+	}
+	
 	@RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
 	public String accessDeniedPage(ModelMap model) {
 		model.addAttribute("loggedinuser", getPrincipal());
@@ -208,7 +214,7 @@ public class AppController {
 	}
 
 	// Below methods are no need to change.
-	private String getPrincipal() {
+	private static String getPrincipal() {
 		System.out.println("AppController.getPrincipal().........");
 		String userName = null;
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

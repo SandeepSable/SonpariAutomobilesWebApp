@@ -1,3 +1,4 @@
+<%@page import="com.ibm.app.controller.AppController"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <head><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="<c:url value='/static/css/header_jsp.css' />" rel="stylesheet"></link>
@@ -33,9 +34,6 @@ font-size: 200px;
 		<ul id="nav">
 
 			<li class="site-name"><a href="./home" style="font-size: 30px;">saaonaprI</a></li>
-
-
-
 			<li class="facebook"><a href="#">yaujar</a>
 				<ul>
 					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
@@ -66,9 +64,9 @@ font-size: 200px;
 				</ul></li>
 					<li class="google"><a href="#">ivak`I</a>
 				<ul>
-					<sec:authorize access="hasAnyRole('ADMIN', 'DBA')">
-						<li><a href="./upcoming">   </a></li>
-						<li><a href="./upcoming">   </a></li>
+					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
+						<li><a href="./sale"> Sale Item  </a></li>
+						<li><a href="./upcoming"> --  </a></li>
 						</sec:authorize>
 				</ul></li>
 			<li class="yahoo"><a href="#">saaza</a>
@@ -87,6 +85,16 @@ font-size: 200px;
 						<li><a href="./upcoming">faoTao baokAp</a></li>
 						</sec:authorize>
 				</ul></li>
+		
+			<li class="google"><a href="#">irpaoT-</a>
+				<ul>
+					<sec:authorize access="hasAnyRole('ADMIN', 'DBA')">
+						<li><a href="./upcoming">Aadvadaa</a></li>
+						<li><a href="./upcoming">vaasaI-k</a></li>
+						</sec:authorize>
+				</ul></li>
+		
+		
 			<li class="twitter"><a href="#">madt</a>
 				<ul>
 				
@@ -101,7 +109,7 @@ font-size: 200px;
 			<li style="right: 10%; float: right;" class="twitter"><a href="#"><img alt="User Options" src="./static/img/user-red.png" width="40px" height="40px"></a>
 				<ul>
 					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
-						<li class="right"><a href="./logout">laaoga Aa]T</a></li>
+						<li class="right"><a href="./logout">laaoga Aa]T <b><%=AppController.getLoggedInUserName() %></b> </a></li>
 					</sec:authorize>
 
 					<sec:authorize access="!hasAnyRole('ADMIN', 'DBA','USER')">
