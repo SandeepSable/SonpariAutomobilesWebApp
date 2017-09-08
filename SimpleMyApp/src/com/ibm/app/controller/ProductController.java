@@ -1,5 +1,8 @@
 package com.ibm.app.controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ibm.app.model.Product;
 import com.ibm.app.service.ProductService;
@@ -19,6 +23,7 @@ import com.ibm.app.service.ProductService;
 @Controller
 public class ProductController {
 
+	private static final String UPLOADED_FOLDER = "C:\\sonpari";
 	@Autowired
 	ProductService productService;
 
@@ -30,7 +35,9 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/add-product", method = RequestMethod.POST)
-	public String handleAddProductForm(@Valid Product product, BindingResult result, ModelMap model) {
+	public String handleAddProductForm(@Valid Product product,BindingResult result, ModelMap model) {
+		System.out.println("ProductController.handleAddProductForm()-------------->");
+		System.out.println("--product--->" + product);
 		System.out.println("ProductController.handleAddProductForm()");
 		if (result.hasErrors()) {
 			return "/add-product";
@@ -40,7 +47,7 @@ public class ProductController {
 		model.addAttribute("product", retProduct);
 		return "success-page";
 	}
-	
+
 	@RequestMapping(value = { "/edit-product-{pid}" }, method = RequestMethod.GET)
 	public String showEditProductForm(ModelMap model, @PathVariable int pid) {
 		System.out.println("ProductController.showEditProductForm()");
@@ -52,15 +59,17 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = { "/edit-product" }, method = RequestMethod.POST)
-	public String handleEditProductForm(@Valid Product product, BindingResult result, ModelMap model,@RequestParam(value="productId", required=true) int productId) {
-		
+	public String handleEditProductForm(@Valid Product product, BindingResult result, ModelMap model,
+			@RequestParam(value = "productId", required = true) int productId) {
+
 		product.setProductId(productId);
-		System.out.println("ProductController.handleEditProductForm()---->"+product);
+		System.out.println("ProductController.handleEditProductForm()---->" + product);
 		if (result.hasErrors()) {
 			return "edit-product";
 		}
 		productService.editProduct(product);
-		//model.addAttribute("success", "Proudct for " + product.getProductName() + " updated successfully.");
+		// model.addAttribute("success", "Proudct for " + product.getProductName() + "
+		// updated successfully.");
 		return "redirect:/view-product";
 	}
 
@@ -79,15 +88,13 @@ public class ProductController {
 		// model.addAttribute("loggedinuser", getPrincipal());
 		Boolean isDeleted = productService.deleteProductByProductId(productId);
 		System.out.println("kaaZuna takNyat Aali aaho.");
-		
+
 		return "redirect:/view-product";
 	}
 
 	@RequestMapping(value = { "/slickgrid-table" }, method = RequestMethod.GET)
-	public String handleSlickGridTableRequest()
-	{
+	public String handleSlickGridTableRequest() {
 		return "/slickgridTable";
 	}
 
-	
 }

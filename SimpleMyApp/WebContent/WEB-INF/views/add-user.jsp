@@ -96,7 +96,7 @@
 			<div class="column">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="userProfiles">yaujar p`kar</label>
-					<div class="col-md-7">
+					<div style="font-family: monospace;" class="col-md-7">
 						<form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm" />
 					</div>
 					<div class="has-error">

@@ -159,7 +159,7 @@ public class AppController {
 
 		userService.saveUser(user);
 
-		model.addAttribute("success","yaujar \'" + user.getFirstName() + "\'"+ user.getLastName() + " tayar karNyaat Aalaa Aaho.");
+		model.addAttribute("success","yaujar \'" + user.getFirstName() + " "+ user.getLastName() + "\' tyaar krNyaat Aalaa Aaho.");
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "/success-page";
 	}

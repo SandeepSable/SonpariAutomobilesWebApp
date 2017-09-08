@@ -11,6 +11,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -35,6 +37,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Autowired
 	RoleToUserProfileConverter roleToUserProfileConverter;
 
+	@Bean
+	public MultipartResolver multipartResolver() {
+		return new StandardServletMultipartResolver();
+	}
+
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -48,7 +55,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 		registry.addResourceHandler("/voltage/**").addResourceLocations("/WEB-INF/themes/voltage/");
 		registry.addResourceHandler("/transit/**").addResourceLocations("/WEB-INF/themes/transit/");
-		
+
 	}
 
 	@Bean
