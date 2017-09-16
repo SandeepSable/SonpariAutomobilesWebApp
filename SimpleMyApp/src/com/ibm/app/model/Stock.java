@@ -2,20 +2,49 @@ package com.ibm.app.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "SP_STOCK_AUDIT_TABLE")
 public class Stock implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6502406283493058461L;
-	private int productId;
-	private String productName;
-	private int quantity;
-	private String inserted_by;
-	private String inserted_time;
-	private String lastModified_by;
-	private String lastModified_time;
+	private static final long serialVersionUID = -650240622443058461L;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "AUDIT_ID")
+	private Integer auditId;
+	
+	@Column(name = "PRODUCT_ID")
+	private int productId;
+
+	@Column(name = "PRODUCT_NAME")
+	private String productName;
+
+	@Column(name = "QUANTITY")
+	private int quantity;
+
+	@Column(name = "INSERTED_BY")
+	private String inserted_by;
+
+	@Column(name = "INSERTED_TIME")
+	private String inserted_time;
+
+
+	public Integer getAuditId() {
+		return auditId;
+	}
+
+	public void setAuditId(Integer auditId) {
+		this.auditId = auditId;
+	}
+
+	
 	public int getProductId() {
 		return productId;
 	}
@@ -56,29 +85,20 @@ public class Stock implements Serializable {
 		this.inserted_time = inserted_time;
 	}
 
-	public String getLastModified_by() {
-		return lastModified_by;
-	}
-
-	public void setLastModified_by(String lastModified_by) {
-		this.lastModified_by = lastModified_by;
-	}
-
-	public String getLastModified_time() {
-		return lastModified_time;
-	}
-
-	public void setLastModified_time(String lastModified_time) {
-		this.lastModified_time = lastModified_time;
-	}
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Stock [productId=").append(productId).append(", productName=").append(productName)
-				.append(", quantity=").append(quantity).append(", inserted_by=").append(inserted_by)
-				.append(", inserted_time=").append(inserted_time).append(", lastModified_by=").append(lastModified_by)
-				.append(", lastModified_time=").append(lastModified_time).append("]");
+		builder.append("Stock [productId=");
+		builder.append(productId);
+		builder.append(", productName=");
+		builder.append(productName);
+		builder.append(", quantity=");
+		builder.append(quantity);
+		builder.append(", inserted_by=");
+		builder.append(inserted_by);
+		builder.append(", inserted_time=");
+		builder.append(inserted_time);
+		builder.append("]");
 		return builder.toString();
 	}
 

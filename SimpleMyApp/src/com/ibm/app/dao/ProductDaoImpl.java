@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.ibm.app.model.Product;
+import com.ibm.app.model.ProductStock;
+import com.ibm.app.model.Stock;
 import com.ibm.app.model.User;
 
 @Repository("productDao")
@@ -36,9 +38,8 @@ public class ProductDaoImpl extends AbstractDao<Integer, Product> implements Pro
 	}
 
 	@Override
-	public void editProduct(Product product) 
-	{
-		System.out.println("Product::"+product);
+	public void editProduct(Product product) {
+		System.out.println("Product::" + product);
 		update(product);
 	}
 
@@ -56,7 +57,7 @@ public class ProductDaoImpl extends AbstractDao<Integer, Product> implements Pro
 	public Product getProductByProductId(int productId) {
 		Criteria crit = createEntityCriteria();
 		crit.add(Restrictions.eq("productId", productId));
-		Product product = (Product)crit.uniqueResult();		
+		Product product = (Product) crit.uniqueResult();
 		return product;
 
 	}
@@ -71,5 +72,4 @@ public class ProductDaoImpl extends AbstractDao<Integer, Product> implements Pro
 		}
 		return true;
 	}
-
 }

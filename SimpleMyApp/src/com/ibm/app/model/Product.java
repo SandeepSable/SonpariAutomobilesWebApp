@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="APP_PRODUCT_TABLE")
+@Table(name="SP_PRODUCT")
 public class Product implements Serializable{
 
 	private static final long serialVersionUID = -2237200875611159283L;
@@ -24,7 +24,9 @@ public class Product implements Serializable{
 	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="PRODUCT_NAME", unique=true, nullable=false)
 	private String productName;
-	
+    
+	@Column(name="QUANTITY", nullable=true)
+	private Integer stock;
 
 	@Column(name="ALISE_NAME", nullable=true)
 	private String aliasName; 
@@ -51,6 +53,14 @@ public class Product implements Serializable{
 	private String gstTax;
 	
 	
+	public Integer getStock() {
+		return stock;
+	}
+
+	public void setStock(Integer stock) {
+		this.stock = stock;
+	}
+
 	@NotEmpty(message="AavaSyak Aaho.")
 	@Column(name="STORAGE_LOCATION", nullable=false)
 	private String storageLocation;
@@ -58,6 +68,18 @@ public class Product implements Serializable{
 	
 	@Column(name="IS_DISABLED", nullable=true)
 	private Boolean isDisabled;
+
+	@Column(name="FILE_PATH", nullable=true)
+	private String filePath;
+
+	
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
 
 	@Column(name="INSERTED_BY", nullable=true)
 	private String insertedBy ;

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.ibm.app.model.Order;
 import com.ibm.app.model.Product;
+import com.ibm.app.model.Stock;
 
 public interface ProductService {
 
@@ -18,5 +19,8 @@ public interface ProductService {
 	public Product getProductByProductId(int productId);
 
 	public Boolean deleteProductByProductId(int productId);
+
+	public void updateStockAudit(Stock stockAudit);
+
 
 }

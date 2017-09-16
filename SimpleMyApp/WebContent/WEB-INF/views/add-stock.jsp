@@ -19,31 +19,39 @@
 
 <div style="margin-left: 15%; margin-right: 15%" class="">
 	 	<form:form method="POST" modelAttribute="product" class="form-horizontal">
-			<div class="column">
+	     <br>
+	     
+	     			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="productName">vastucao naava</label>
+					<label class="col-md-3 control-lable" for="productName">vastucao
+						naava</label>
 					<div class="col-md-7">
-						<form:input type="text" path="productName" id="productName" class="form-control input-sm"/>
+						<form:select type="text" name="productName" path="productName" id="productName" class="form-control input-sm" >
+							<form:option value="NONE" label="Select" />
+							<form:options items="${productsList}" />
+						</form:select>
+
 					</div>
 					<div class="has-error">
-							<form:errors path="productName" class="help-inline"/>
-						</div>
+						<form:errors path="productName" class="help-inline" />
+					</div>
 				</div>
 			</div>
-	
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="asliasName">AvaaMtr naava</label>
+					<label class="col-md-3 control-lable" for="storageLocation">sTaok</label>
 					<div class="col-md-7">
-						<form:input type="text" path="aliasName" id="aliasName" class="form-control input-sm" />
+						<form:input style="font-size:25px;" type="text" path="stock"
+							id="storageLocation" class="form-control input-sm" />
 					</div>
 					<div class="has-error">
-							<form:errors path="aliasName" class="help-inline"/>
-						</div>
+						<form:errors path="stock" class="help-inline" />
+					</div>
 				</div>
 			</div>
-	
-			<div class="column">
+			
+	     
+			<div class="column" style="display: none;">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="Description">saivastr maaihtI</label>
 					<div class="col-md-7">
@@ -56,7 +64,7 @@
 				</div>
 			</div>
 			
-			<div class="column">
+			<div class="column" style="display: none;">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="manufacturerName">]tpadk kMpnaIcao naava </label>
 					<div class="col-md-7">
@@ -68,7 +76,7 @@
 						</div>
 				</div>
 			</div>
-			<div class="column">
+			<div class="column" style="display: none;">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="warrenty">hmaI</label>
 					<div class="col-md-7">
@@ -80,7 +88,7 @@
 			</div>
 			
 			
-		<div class="column">
+		<div class="column" style="display: none;">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="price">ikMmat</label>
 					<div class="col-md-7">
@@ -93,9 +101,9 @@
 				</div>
 			</div>
 			
-		<div class="column">
+		<div class="column" style="display: none;">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="gstTax">Saasanaacaa kr</label>
+					<label class="col-md-3 control-lable" for="gstTax">jaIesaTI</label>
 					<div class="col-md-7">
 						<form:input type="number" path="gstTax" id="gstTax" class="form-control input-sm" />
 						
@@ -106,31 +114,6 @@
 				</div>
 			</div>
 			
-		<div class="column">
-				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="storageLocation">zovalaolao izkaNa</label>
-					<div class="col-md-7">
-						<form:input style="font-size:25px;" type="text" path="storageLocation" id="storageLocation" class="form-control input-sm" />
-						
-					</div>
-					<div class="has-error">
-							<form:errors path="storageLocation" class="help-inline"/>
-						</div>
-				</div>
-			</div>
-		
-		
-			<div class="column">
-				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="isDisabled">Akaya-rt kra</label>
-					<div class="col-md-7">
-						<form:input type="Checkbox" path="isDisabled" id="isDisabled" class="form-control input-sm" />
-					</div>
-					<div class="has-error">
-							<form:errors path="isDisabled" class="help-inline"/>
-						</div>
-				</div>
-			</div>
 <div></div>
 			<div class="column">
 				<div class="form-actions" style="text-align: center;">

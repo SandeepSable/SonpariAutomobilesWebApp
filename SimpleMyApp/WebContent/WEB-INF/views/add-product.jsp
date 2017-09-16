@@ -18,7 +18,8 @@
 	<%@include file="header.jsp"%>
 
 <div style="margin-left: 15%; margin-right: 15%" class="">
-	 	<form:form method="POST" modelAttribute="product" class="form-horizontal">
+	 	<form:form method="POST" action="./add-product?${_csrf.parameterName}=${_csrf.token}" modelAttribute="product" class="form-horizontal" enctype="multipart/form-data">
+	     <br>
 			<div class="column">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="productName">vastucao naava</label>
@@ -30,19 +31,6 @@
 						</div>
 				</div>
 			</div>
-	
-			<div class="column">
-				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="asliasName">AvaaMtr naava</label>
-					<div class="col-md-7">
-						<form:input type="text" path="aliasName" id="aliasName" class="form-control input-sm" />
-					</div>
-					<div class="has-error">
-							<form:errors path="aliasName" class="help-inline"/>
-						</div>
-				</div>
-			</div>
-	
 			<div class="column">
 				<div class="form-group col-md-12">
 					<label class="col-md-3 control-lable" for="Description">saivastr maaihtI</label>
@@ -92,10 +80,23 @@
 						</div>
 				</div>
 			</div>
+		<div class="column">
+				<div class="form-group col-md-12">
+					<label class="col-md-3 control-lable" for="storageLocation">sTaok</label>
+					<div class="col-md-7">
+						<form:input style="font-size:25px;" type="text" path="stock" id="storageLocation" class="form-control input-sm" />
+						
+					</div>
+					<div class="has-error">
+							<form:errors path="stock" class="help-inline"/>
+						</div>
+				</div>
+			</div>
+
 			
 		<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="gstTax">Saasanaacaa kr</label>
+					<label class="col-md-3 control-lable" for="gstTax">jaIesaTI</label>
 					<div class="col-md-7">
 						<form:input type="number" path="gstTax" id="gstTax" class="form-control input-sm" />
 						
@@ -122,13 +123,12 @@
 		
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="isDisabled">Akaya-rt kra</label>
+					<label class="col-md-3 control-lable" for="filePath">vastucaa faoTao</label>
 					<div class="col-md-7">
-						<form:input type="Checkbox" path="isDisabled" id="isDisabled" class="form-control input-sm" />
+						<input style="font-family:Monospace;" type="file" class="file" data-show-preview="false" name="photo" id="photo" class="form-control" />
 					</div>
 					<div class="has-error">
-							<form:errors path="isDisabled" class="help-inline"/>
-						</div>
+					</div>
 				</div>
 			</div>
 <div></div>

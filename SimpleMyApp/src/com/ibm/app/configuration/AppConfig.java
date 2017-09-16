@@ -1,5 +1,7 @@
 package com.ibm.app.configuration;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -11,8 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.multipart.MultipartResolver;
-import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import com.ibm.app.converter.ProductImageToProductConverter;
 import com.ibm.app.converter.RoleToUserProfileConverter;
 import com.ibm.app.schedule.CommonJobsSchedule;
 
@@ -36,11 +38,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired
 	RoleToUserProfileConverter roleToUserProfileConverter;
-
-	@Bean
-	public MultipartResolver multipartResolver() {
-		return new StandardServletMultipartResolver();
-	}
 
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 
@@ -58,6 +55,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 	}
 
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver getResolver() throws IOException {
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        // no limit
+        resolver.setMaxUploadSize(-1);
+        return resolver;
+    }
+    
 	@Bean
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
@@ -68,6 +73,12 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	CommonJobsSchedule getHealthCheckupBean() {
 		return new CommonJobsSchedule();
+	}
+	
+	@Bean
+	ProductImageToProductConverter converter()
+	{
+		return new ProductImageToProductConverter();
 	}
 
 	@Override

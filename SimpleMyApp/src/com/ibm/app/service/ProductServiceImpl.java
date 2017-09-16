@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.app.dao.ProductDao;
+import com.ibm.app.dao.StockDao;
 import com.ibm.app.messaging.MessageSender;
 import com.ibm.app.model.Order;
 import com.ibm.app.model.Product;
+import com.ibm.app.model.Stock;
 
 @Service("productService")
 @Transactional
@@ -23,7 +25,10 @@ public class ProductServiceImpl implements ProductService {
 	MessageSender messageSender;
 	@Autowired
 	ProductDao productDao;
+	@Autowired
+	StockDao stockDao;
 
+	
 	@Override
 	public void sendOrder(Order order) {
 		LOG.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -64,5 +69,13 @@ public class ProductServiceImpl implements ProductService {
 	public void editProduct(Product product) {
 		productDao.editProduct(product);
 	}
+
+	@Override
+	public void updateStockAudit(Stock stockAudit) {
+
+		stockDao.updateStockAudit(stockAudit);
+		
+	}
+
 
 }

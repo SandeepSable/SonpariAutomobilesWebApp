@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -27,6 +26,9 @@ input, div, option, select {
 input, div, option, select:hover {
 	font-family: Shivaji01;
 }
+table, th, td {
+    border-right: solid 1px black; border-left: solid 1px black;
+}
 </style>
 </head>
 <body>
@@ -35,7 +37,7 @@ input, div, option, select:hover {
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<legend>saaonaprI AaTaomaaobaayala</legend>
+				<legend>saaonaprI AaTaomaaobaa[-la        <span style="font-family: monospace; float:right; font-size: 16px;">GST Number - <b style="font-family: monospace;font-size: 16px;">27COBPS4228H1ZT</b></span> </legend>
 			</div>
 			<!-- panel preview -->
 			<div class="col-sm-5">
@@ -85,7 +87,8 @@ input, div, option, select:hover {
 				</div>
 			</div>
 			<!-- / panel preview -->
-			<div id="bill" class="col-sm-7">
+			<div id="" class="col-sm-7">
+			<div id="bill">
 				<h4>ilasT pha</h4>
 				<div class="row">
 					<div class="col-xs-12">
@@ -99,7 +102,7 @@ input, div, option, select:hover {
 										<th>ek naga ikMmat</th>
 										<th>ekuNa naga</th>
 										<th>sagaLI ikMmat</th>
-
+	
 									</tr>
 								</thead>
 								<tbody></tbody>
@@ -111,14 +114,17 @@ input, div, option, select:hover {
 				<div class="row text-right">
 					<div class="col-xs-12">
 						<h4>
-							ekuNa  <strong><span class="preview-total"></span></strong>
+							ekuNa  <strong><span class="preview-total">0.00</span></strong>
 						</h4>
 					</div>
 				</div>
+			</div>
+			
+			
 				<div class="row">
 					<div class="col-xs-12">
 						<hr style="border: 1px dashed #dddddd;">
-						<button type="button" onclick="PrintElem('bill')" class="btn btn-primary btn-block">ip`MT kra</button>
+						<button type="button" onclick="PrintElem('bill')" class="btn btn-primary btn-block" style="font-family:Shivaji01;" >ip`MT kra</button>
 					</div>
 				</div>
 			</div>
@@ -128,10 +134,9 @@ input, div, option, select:hover {
 	function PrintElem(elem)
 	{
 	    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-
 	    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
 	    mywindow.document.write('</head><body style="font-family:Shivaji01;" >');
-	    mywindow.document.write('<h1>saaonaprI iball</h1>');
+	    mywindow.document.write('<h1>saaonaprI ibala  <span style="font-family: monospace; float:right; font-size: 16px;">GST Number - <b style="font-family: monospace;font-size: 16px;">27COBPS4228H1ZT</b></span></h1>'); 
 	    mywindow.document.write(document.getElementById(elem).innerHTML);
 	    mywindow.document.write('</body></html>');
 
@@ -173,11 +178,10 @@ var count = 0;
 								form_data["perUnit"] = parseFloat($('.payment-form input[name="amount"]').val()).toFixed(2);
 								form_data["naga"] = $('.payment-form input[name="naga"]').val();
 								form_data["amount"] = a;
-								form_data["remove-row"] = ' <img width="10px" height="10px" src="./static/img/close.png"/> ';
+								form_data["remove-row"] = ' <img class=".imageFile" width="10px" height="10px" src="./static/img/close.png"/> ';
 								var row = $('<tr></tr>');
 								$.each(form_data, function(type, value) {
-									$('<td class="input-'+type+'"></td>').html(
-											value).appendTo(row);
+									$('<td style="" class="input-'+type+'"></td>').html(value).appendTo(row);
 								});
 								$('.preview-table > tbody:last').append(row);
 								calc_total();

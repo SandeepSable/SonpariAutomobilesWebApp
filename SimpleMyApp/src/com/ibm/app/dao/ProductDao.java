@@ -1,9 +1,10 @@
 package com.ibm.app.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ibm.app.model.Product;
-import com.ibm.app.model.User;
+import com.ibm.app.model.Stock;
 
 public interface ProductDao {
 

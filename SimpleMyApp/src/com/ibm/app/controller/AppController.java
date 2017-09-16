@@ -49,7 +49,7 @@ public class AppController {
 	AuthenticationTrustResolver authenticationTrustResolver;
 
 	@RequestMapping(value = "/getUserName", method = RequestMethod.GET)
-	public static String getLoggedInUserName()
+	public static String getCurrentUserName()
 	{
 		return getPrincipal();
 	}

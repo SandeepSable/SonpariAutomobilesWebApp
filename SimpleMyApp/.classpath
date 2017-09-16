@@ -13,12 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activemq-broker-5.13.3.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activemq-client-5.13.3.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activemq-jms-pool-5.13.3.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activemq-openwire-legacy-5.13.3.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activemq-pool-5.13.3.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activemq-spring-5.13.3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/aspectjrt-1.8.9.jar"/>
@@ -97,5 +91,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xbean-spring-3.18.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xml-apis-1.0.b2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

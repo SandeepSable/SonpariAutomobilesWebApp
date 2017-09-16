@@ -35,26 +35,26 @@
 			<div class="carousel-inner">
 
 				<div class="item active">
-					<img height="78%" src="./static/img/win_2.jpg" alt="Los Angeles" style="width: 100%; height: 95%;">
+					<img height="78%" src="./static/img/win_2.jpg" alt="Los Angeles" style="width: 100%; height: 90%;">
 					<div class="carousel-caption">
-						<h3>Los Angeles</h3>
-						<p>LA is always so much fun!</p>
+						<h3>saaonaprI 1</h3>
+						<p>saaonaprI 2</p>
 					</div>
 				</div>
 
 				<div class="item">
-					<img height="78%" src="./static/img/win_1.jpg" alt="Chicago" style="width: 100%; height: 95%;">
+					<img height="78%" src="./static/img/win_1.jpg" alt="Chicago" style="width: 100%; height: 90%;">
 					<div class="carousel-caption">
-						<h3>Chicago</h3>
-						<p>Thank you, Chicago!</p>
+						<h3>saaonaprI 1</h3>
+						<p>saaonaprI 2</p>
 					</div>
 				</div>
 
 				<div class="item" >
-					<img src="./static/img/win_1.jpg" alt="New York" style="width: 100%; height: 95%;">
+					<img src="./static/img/win_1.jpg" alt="New York" style="width: 100%; height: 90%;">
 					<div class="carousel-caption">
-						<h3>New York</h3>
-						<p>We love the Big Apple!</p>
+						<h3>saaonaprI 1</h3>
+						<p>saaonaprI 2</p>
 					</div>
 				</div>
 

@@ -1,4 +1,4 @@
-<%@page import="com.ibm.app.controller.AppController"%>
+<%@ page import="com.ibm.app.controller.AppController"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <head><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="<c:url value='/static/css/header_jsp.css' />" rel="stylesheet"></link>
@@ -15,9 +15,9 @@
 	});
 </script>
 <style type="text/css">
-body,a,li,ul,div,p,b,tr,td,table,span{
+body,a,li,ul,div,p,b,tr,td,table,span,INPUT,input{
 font-family: Shivaji01;
-font-size: 20;
+font-size: 19px;
 }
 
 input{
@@ -65,15 +65,15 @@ font-size: 200px;
 					<li class="google"><a href="#">ivak`I</a>
 				<ul>
 					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
-						<li><a href="./sale"> Sale Item  </a></li>
-						<li><a href="./upcoming"> --  </a></li>
+						<li><a href="./sale1"> ivak`I vastu 1 </a></li>
+						<li><a href="./sale2">ivak`I vastu 2 </a></li>
 						</sec:authorize>
 				</ul></li>
 			<li class="yahoo"><a href="#">saaza</a>
 				<ul>
 				
 					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
-					<li><a href="./upcoming">naivana</a></li>
+					<li><a href="./add-stock">naivana</a></li>
 					<li><a href="./upcoming"></a></li>
 					<li><a href="./upcoming">sava- pha</a></li>
 					</sec:authorize>
@@ -89,8 +89,8 @@ font-size: 200px;
 			<li class="google"><a href="#">irpaoT-</a>
 				<ul>
 					<sec:authorize access="hasAnyRole('ADMIN', 'DBA')">
-						<li><a href="./upcoming">Aadvadaa</a></li>
-						<li><a href="./upcoming">vaasaI-k</a></li>
+						<li><a href="./upcoming">AazvaDa</a></li>
+						<li><a href="./upcoming">vaaiYa-k</a></li>
 						</sec:authorize>
 				</ul></li>
 		
@@ -109,7 +109,7 @@ font-size: 200px;
 			<li style="right: 10%; float: right;" class="twitter"><a href="#"><img alt="User Options" src="./static/img/user-red.png" width="40px" height="40px"></a>
 				<ul>
 					<sec:authorize access="hasAnyRole('ADMIN', 'DBA','USER')">
-						<li class="right"><a href="./logout">laaoga Aa]T <b><%=AppController.getLoggedInUserName() %></b> </a></li>
+						<li class="right"><a href="./logout">laaoga Aa]T <b><%=AppController.getCurrentUserName() %></b> </a></li>
 					</sec:authorize>
 
 					<sec:authorize access="!hasAnyRole('ADMIN', 'DBA','USER')">
