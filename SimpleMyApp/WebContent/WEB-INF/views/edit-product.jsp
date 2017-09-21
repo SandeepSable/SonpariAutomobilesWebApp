@@ -124,7 +124,7 @@
 
 			<div class="column">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="price">jaI.esa.TI kr</label>
+					<label class="col-md-3 control-lable" for="price">jaIesaTI</label>
 					<div class="col-md-7">
 						<form:input type="number" path="gstTax" id="gstTax"
 							class="form-control input-sm" />
@@ -167,8 +167,8 @@
 				<div class="form-actions">
 					<c:choose>
 						<c:when test="${edit}">
-							<input type="submit" value="badla kra"	class="btn btn-primary btn-sm" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="<c:url value='/view-product' />">rdd kra</a>
+							<input type="submit" value="badla kra"	class="btn btn-primary btn-lg" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a class="btn btn-primary btn-lg" href="<c:url value='/view-product' />">rdd kra</a>
 						</c:when>
 						<c:otherwise>
 							<input type="submit" value="baDal kra"

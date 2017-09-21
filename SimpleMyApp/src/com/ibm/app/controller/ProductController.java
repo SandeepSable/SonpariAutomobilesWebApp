@@ -38,7 +38,7 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/add-product", method = RequestMethod.POST)
-	public String handleAddProductForm(@Valid Product product, BindingResult result, ModelMap model,@RequestParam("photo") MultipartFile multipartFile) {
+	public String handleAddProductForm(@Valid Product product, BindingResult result, ModelMap model,@RequestParam("photo") List <MultipartFile> multipartList) {
 		String photoFileFullPathWithName = "";
     	String fileName = null;
 	    System.out.println("ProductController.handleAddProductForm()-------------->");
@@ -54,26 +54,32 @@ public class ProductController {
 		Product retProduct = productService.addProduct(product);
 		model.addAttribute("success", "vastu \' " + product.getProductName() + " \'  samaaivasT krNyaat AalaI Aaho.");
 		model.addAttribute("product", retProduct);
-		
 
-    	if (!multipartFile.isEmpty()) {
-            try {
-                fileName = multipartFile.getOriginalFilename();
-                byte[] bytes = multipartFile.getBytes();
-                File file = new File("C:/sonpari/images/"+retProduct.getProductId()+"/");
-                file.mkdirs();
-                
-                
-                BufferedOutputStream buffStream = new BufferedOutputStream(new FileOutputStream(new File("C:/sonpari/images/"+retProduct.getProductId()+"/"+fileName)));
-                buffStream.write(bytes);
-                buffStream.close();
-                System.out.println("You have successfully uploaded " + fileName);
-            }
-            catch (Exception e) 
-            {
-                System.out.println("You failed to upload " + fileName + ": " + e.getMessage());
-            }
-        }
+		if(!multipartList.isEmpty())
+		{
+		for(MultipartFile multipartFile:multipartList)
+		{
+
+	    	if (!multipartFile.isEmpty()) {
+	            try {
+	                fileName = multipartFile.getOriginalFilename();
+	                byte[] bytes = multipartFile.getBytes();
+	                File file = new File("C:/sonpari/images/"+retProduct.getProductId()+"/");
+	                file.mkdirs();
+	                
+	                
+	                BufferedOutputStream buffStream = new BufferedOutputStream(new FileOutputStream(new File("C:/sonpari/images/"+retProduct.getProductId()+"/"+fileName)));
+	                buffStream.write(bytes);
+	                buffStream.close();
+	                System.out.println("You have successfully uploaded " + fileName);
+	            }
+	            catch (Exception e) 
+	            {
+	                System.out.println("You failed to upload " + fileName + ": " + e.getMessage());
+	            }
+	        }	
+		}
+		}
     	else 
         {
             System.out.println("Unable to upload. File is empty.");

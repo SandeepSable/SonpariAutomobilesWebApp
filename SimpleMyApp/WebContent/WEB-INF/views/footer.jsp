@@ -45,5 +45,5 @@ body {
 </style>
 </head>
 
-<div style="overflow: hidden; font-family: Arial;font-size: 14px;" class="footer">Copyright (c) 1999-2018 <b style="font-family: Arial;font-size: 14;font-style: italic;">SatSun Developers</b> All Rights Reserved This product is protected by copyright and distributed under licenses restricting copying, distribution and decompilation.
+<div style="overflow: hidden; position:fixed; font-family: Arial;font-size: 14px;" class="footer">Copyright (c) 1999-2018 <b style="font-family: Arial;font-size: 14;font-style: italic;">SatSun Developers</b> All Rights Reserved This product is protected by copyright and distributed under licenses restricting copying, distribution and decompilation.
 </div>

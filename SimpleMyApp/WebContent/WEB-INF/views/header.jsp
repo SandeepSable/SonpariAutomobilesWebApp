@@ -4,7 +4,15 @@
 <link href="<c:url value='/static/css/header_jsp.css' />" rel="stylesheet"></link>
 <link href="./static/font/Shivaji01.ttf"></link>
 <link rel="shortcut icon" href="./static/img/sync.png" type="image/x-icon">
-<script type="text/javascript" src="./static/js/jquery-3.2.1.min.js">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./static/temp/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="./static/temp/themes/explorer/theme.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./static/temp/js/plugins/sortable.js" type="text/javascript"></script>
+    <script src="./static/temp/js/fileinput.js" type="text/javascript"></script>
+    <script src="./static/temp/themes/explorer/theme.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./static/js/jquery-3.2.1.min.js">
 	$(document).ready(function() {
 		$("#nav li").hover(function() {
 			$(this).children('ul').hide();
@@ -17,21 +25,21 @@
 <style type="text/css">
 body,a,li,ul,div,p,b,tr,td,table,span,INPUT,input{
 font-family: Shivaji01;
-font-size: 19px;
+font-size: 20px;
 }
 
 input{
-font-size: 15px;
+font-size: 20px;
 }
 .input-sm{
-font-size: 200px;
+font-size: 20px;
 }
 </style>
 </head>
 
 <div>
 	<div class="row">
-		<ul id="nav">
+		<ul id="nav" style="position: relative; top:0px; bottom: 50%; right: 100px; left: 10px;">
 
 			<li class="site-name"><a href="./home" style="font-size: 30px;">saaonaprI</a></li>
 			<li class="facebook"><a href="#">yaujar</a>

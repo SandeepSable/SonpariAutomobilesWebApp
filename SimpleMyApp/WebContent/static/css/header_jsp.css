@@ -1,8 +1,8 @@
 #nav{
     height: 40px;
-    font: 12px Geneva, Arial, Helvetica, sans-serif;
-    background: #3AB3A9;
-    border: 1px solid #30A097;  
+    font: 25px Shivaji01, sans-serif;
+    background:  #8e44ad;
+    border: 1px solid #ffffff;  
     border-radius: 3px;
     min-width:500px;
     margin-left: 0px;
@@ -25,8 +25,8 @@
     text-decoration: none;
     border-right: 1px solid #389E96;
     height: 40px;
-    color: #FFF;
-    text-shadow: 1px 1px 1px #66696B;
+    color:  #ffffff ;
+    text-shadow: 1px 1px 1px #31499f;
 }
 
 #nav ul{
@@ -139,4 +139,43 @@
     position: fixed;
     overflow: visible;
     
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

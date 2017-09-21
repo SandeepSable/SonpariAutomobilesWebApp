@@ -30,8 +30,8 @@
 						<th>Anau k`maaMk</th>
 						<th>vastucao naava</th>
 						<th>pyaa-yaI naava</th>
-						<th>saivastar maihtI</th>
-						<th>]tpadk kMpnaIcao naava</th>
+						<th>saivastr maihtI</th>
+						<th>kMpnaIcao naava</th>
 						<th>ikMmat</th>
 						<th>sTaok</th>
 						<th>hmaI</th>
@@ -39,9 +39,6 @@
 						<th>zovalaolao izkaNa</th>
 						<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
 							<th width="100">badla kra</th>
-						</sec:authorize>
-						<sec:authorize access="hasRole('ADMIN')">
-							<th width="100">kaZuna Taka</th>
 						</sec:authorize>
 					</tr>
 				</thead>
@@ -59,14 +56,13 @@
 							<td>${product.gstTax}</td>
 							<td>${product.storageLocation}</td>
 							<sec:authorize access="hasAnyRole('ADMIN', 'DBA')">
-								<td colspan="1"> <a
-									href="<c:url value='/edit-product-${product.productId}' />"
-									class="btn btn-success custom-width">badla kra</a></td>
+								<td nowrap="nowrap"> 
+								 <a	href="<c:url value='/edit-product-${product.productId}' />"	class="btn btn-success custom-width">badla kra</a>
+								 <a href="<c:url value='/delete-product-${product.productId}' />" class="btn btn-danger custom-width">kaZuna Taka</a>
+								</td>
 							</sec:authorize>
 							<sec:authorize access="hasAnyRole('ADMIN','DBA')">
-								<td colspan="1"><a
-									href="<c:url value='/delete-product-${product.productId}' />"
-									class="btn btn-danger custom-width">kaZuna Taka</a></td>
+								<td colspan="1">
 							</sec:authorize>
 						</tr>
 					</c:forEach>
@@ -74,7 +70,7 @@
 			</table>
 		</div>
 		<sec:authorize access="hasRole('ADMIN')">
-			<div class="well">
+			<div class="" style="background: navy; ; height: 1%; font-size: 20px; vertical-align: middle; ">
 				<a style="font-family: Shivaji01;" href="<c:url value='/add-product' />">naivana tyaar kra</a>
 			</div>
 		</sec:authorize>
